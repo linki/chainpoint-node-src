@@ -67,8 +67,8 @@ async function validateUriAsync(nodeUri) {
   let parsedURIHost = parsedURI.hostname
   let uriHasValidPort = !!(parsedURI.port === null || parsedURI.port === '80')
 
-  // Valid IPv4 IP address
-  let uriHasValidIPHost = validator.isIP(parsedURIHost, 4)
+  // Valid IP address
+  let uriHasValidIPHost = validator.isIP(parsedURIHost)
 
   if (
     isValidURI &&
@@ -102,7 +102,7 @@ async function validatePrivateUriAsync(nodeUri) {
   let parsedURI = url.parse(nodeUri)
   let parsedURIHost = parsedURI.hostname
   let uriHasValidPort = !!(parsedURI.port === null || parsedURI.port === '80')
-  let uriHasValidIPHost = validator.isIP(parsedURIHost, 4)
+  let uriHasValidIPHost = validator.isIP(parsedURIHost)
 
   if (
     isValidURI &&
